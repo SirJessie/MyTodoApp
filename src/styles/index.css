@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    user-select: none;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+input,textarea{
+    padding: 5px;
+    font-family: 'Poppins';
+    width: 100%;
+}
+.btn{
+    font-family: 'Poppins';
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    opacity: 1;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: .8;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: maroon;
+    border: solid 2px gold;
+    border-radius: 10px;
+}

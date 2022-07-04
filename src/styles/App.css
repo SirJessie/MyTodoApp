@@ -1,0 +1,79 @@
+.content-wrapper{
+    background-color: maroon;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+.title-bar{
+    color: white;
+    padding: 10px 0;
+    font-size: 40px;
+    font-weight: 800;
+}
+.card{
+    position: relative;
+    background-color: gold;
+    width: 350px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0, .8);
+}
+.card-header{
+    padding: 5px 5px 10px 5px;
+    flex-direction: column;
+}
+.card-header .card-title{
+    font-weight: bold;
+}
+.card-header .errorMsg{
+    font-size: 14px;
+    padding-top: 5px;
+    color: maroon;
+}
+.icon{
+    cursor: pointer;
+}
+.card-body{
+    overflow-y: auto;
+    max-height: 320px;
+}
+.card-body .card-item:first-child{
+    margin-top: 10px;
+}
+.card-body .card-item:last-child{
+    margin-bottom: 10px;
+}
+.card-body .card-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.card-body .card-item .item-text{
+    width: 275px;
+}
+.card-body .card-item .item-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+}
+.card-body .card-item .item-icons .icon{
+    font-size: 17px;
+}
+.card-title{
+    margin-bottom: 15px;
+}
+.card-input{
+    display: flex;
+}
+.card-input .btn-add{
+    margin-left: 10px;
+    background-color: maroon;
+    color: white;
+}
+.card-footer .btn-deleteAll{
+    background-color: rgb(177, 9, 9);
+    color: white;
+}
