@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 // Styles
@@ -23,14 +23,33 @@ function App(){
 
     const {todo, todolist} = state;
     const {editTodo, editIndex, editValue} = edit;
+
+    //
+    useEffect(()=>{
+        
+        const temp = localStorage.getItem("todolist");
+        const loadedTodos = JSON.parse(temp);
+
+        if(loadedTodos){
+            setState({todolist: loadedTodos});
+        }
+    }, []);
+
+    useEffect(()=>{
+        const temp = JSON.stringify(todolist);
+        localStorage.setItem("todolist", temp);
+    }, [{todolist}]);// eslint-disable-line react-hooks/exhaustive-deps
     
     const handleOnchange = (e) => {
+        e.preventDefault();
         const {name, value } = e.target;
 
         setState({...state, [name]: value})
     }
 
     const handleOnchangeUpdate = (e) => {
+        e.preventDefault();
+
         const {name, value } = e.target;
 
         setEdit({...edit, [name]: value})
@@ -58,14 +77,14 @@ function App(){
         setState({todo: '', todolist: list});
     }
 
-    const deleteAllTodo = () =>{
+    const deleteAllTodo = () => {
         todolist.splice(0, todolist.length);
 
         setState({todo: '', todolist: todolist});
     }
 
     //UPDATE PLAN
-    const updateTodo = (index) =>{
+    const updateTodo = (index) => {
         const list = todolist;
         list[index] = editTodo;
         
