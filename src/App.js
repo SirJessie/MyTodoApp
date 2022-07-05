@@ -126,7 +126,7 @@ function App(){
                                     todolist.map((value, index) => {
                                         return(
                                             <div className='card-item' key={index}>
-                                                <span className='item-text'>{value}</span>
+                                                <span className='item-text'>&diams; {value}</span>
                                                 <div className='item-icons'>
                                                     <i 
                                                         className="fa-solid fa-pen-to-square icon" 
